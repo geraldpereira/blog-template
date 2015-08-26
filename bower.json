@@ -1,0 +1,25 @@
+{
+  "name": "Blog",
+  "version": "0.0.1-SNAPSHOT",
+  "authors": [
+    "John Doe"
+  ],
+  "description": "My Blog",
+  "keywords": [
+    "Blog Jekyll Bootstrap4 Bower Grunt"
+  ],
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~4.0.0-alpha"
+  },
+  "overrides": {
+    "bootstrap":{
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
