@@ -12,13 +12,20 @@
     "bower_components"
   ],
   "dependencies": {
-    "bootstrap": "~4.0.0-alpha"
+    "bootstrap": "~4.0.0-alpha",
+    "font-awesome": "~4.4.0"
   },
   "overrides": {
-    "bootstrap":{
+    "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.css",
+        "./fonts/*"
       ]
     }
   }

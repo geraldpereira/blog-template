@@ -46,7 +46,9 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "blog"
+        "blog",
+        "toc",
+        "sticky_footer"
         //"base",
         //"layout",
         //"syntax-highlighting"
