@@ -15,9 +15,9 @@ body {
   height: 80px;
   color: #999;
   text-align: center;
-  padding: 10px 0;
-  border-top: 1px solid #e5e5e5;
-  background-color: #f9f9f9;
+  padding: $spacer 0;
+  border-top: $border-width solid $gray-lighter;
+  background-color: $gray-lightest;
 
 
   ul.social-buttons {
@@ -33,7 +33,7 @@ body {
     line-height: 40px;
     outline: 0;
     color: #fff;
-    background-color: $brand-color;
+    background-color: $brand-primary;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
@@ -42,7 +42,7 @@ body {
   ul.social-buttons li a:hover,
   ul.social-buttons li a:focus,
   ul.social-buttons li a:active {
-    background-color: $alt-color;
+    background-color: $brand-info;
   }
 }
 
