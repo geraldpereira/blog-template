@@ -1,0 +1,52 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Same as the fixed height of the footer */
+  margin-bottom: 80px !important;
+  min-height: 100%;
+}
+.blog-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 80px;
+  color: #999;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f9f9f9;
+
+
+  ul.social-buttons {
+    margin-bottom: 0;
+  }
+
+  ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: $brand-color;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+  }
+
+  ul.social-buttons li a:hover,
+  ul.social-buttons li a:focus,
+  ul.social-buttons li a:active {
+    background-color: $alt-color;
+  }
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+

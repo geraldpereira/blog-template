@@ -1,5 +1,11 @@
 <footer class="blog-footer">
-  <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <ul class="list-inline social-buttons">
+    {% for network in site.social %}
+    <li>
+      <a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
+    </li>
+    {% endfor %}
+  </ul>
   <p>
     <a href="#">Back to top</a>
   </p>

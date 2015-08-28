@@ -21,15 +21,12 @@ module.exports = function (grunt) {
                 exclude: []
             }
         },
-        // To include js/*.js in _includes/head.html file
+        // To include js/*.js in _includes/foot.html file
         includeSource: {
             options: {
-                //basePath: 'app',
-                //baseUrl: 'app/'
             },
             dev: {
                 files: {
-                    '_includes/head.html': '_includes/head.html',
                     '_includes/foot.html': '_includes/foot.html'
                 }
             },

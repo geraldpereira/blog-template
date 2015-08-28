@@ -1,7 +1,10 @@
 ---
-layout: page
-title: Contact
-permalink: /contact/
+layout: post
+title:  "Lorem ipsum dolor sit amet"
+date:   2015-08-26 11:24:03
+description: Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+categories: jekyll update
+image: lorem-ipsum.png
 ---
 
 ## Lorem ipsum

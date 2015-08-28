@@ -1,23 +1,55 @@
 ---
 layout: page
 ---
+<div class="blog">
+    <div class="row">
+        <div class="blog-header col-xs-12">
+            <h1 class="blog-title">Gérald Pereira's Blog</h1>
+            <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for post in paginator.posts %}
+        <div class="col-sm-6 col-md-4 preview">
+            <a href="{{ post.url }}" title="{{post.title}}">
+                <img class="preview-thumbnail img-responsive" src="/img/blog/{{ post.image }}" width="600" height="300"
+                     alt="{{post.title}}">
+            </a>
 
-<div class="home">
+            <div class="preview-caption">
+                <div>
+                    <h3>
+                        <a href="{{post.url}}" title="{{post.title}}" hreflang="{{site.lang}}"><i
+                                class="fa fa-chevron-right"></i> {{ post.title }}</a>
+                    </h3>
 
-  <h1 class="page-heading">Posts</h1>
+                    <p class="text-muted">{{ post.description }}</p>
+                </div>
+                <em class="text-muted">Category: {% for category in post.categories %}{{category}} {% endfor %}
+                </em>
+                <br/>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    {% if paginator.total_pages > 1 %}
+    <nav>
+        <ul class="pager">
+            <li {% if !paginator.previous_page %}{% else %} class="disabled" {% endif %}>
+                <a href="{{ paginator.previous_page_path | replace: '//', '/' }}" aria-label="Newer" hreflang="en">
+                    <span aria-hidden="true">Newer</span>
+                </a>
+            </li>
+            <li {% if !paginator.next_page %}{% else %}class="disabled" {% endif %}>
+                <a href="{{ paginator.next_page_path | replace: '//', '/' }}" aria-label="Older" hreflang="en">
+                    <span aria-hidden="true">Older</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
 </div>
+
+
+
