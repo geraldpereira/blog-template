@@ -45,6 +45,18 @@ module.exports = function (grunt) {
                     {
                         cwd: '_site',
                         expand: true,
+                        src: ['CNAME'],
+                        dest: '../blog-gh-pages/'
+                    },
+                    {
+                        cwd: '_site',
+                        expand: true,
+                        src: ['*.xml'],
+                        dest: '../blog-gh-pages/'
+                    },
+                    {
+                        cwd: '_site',
+                        expand: true,
                         src: ['**/*.html'],
                         dest: '../blog-gh-pages/'
                     },
