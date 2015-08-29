@@ -69,19 +69,13 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        'http-server': {
-            'dist': {
-                // the server root directory
-                root: '../blog-gh-pages'
-            }
-        },
-        useminPrepare : {
+        useminPrepare: {
             html: '_site/index.html',
             options: {
                 dest: '../blog-gh-pages/'
             }
         },
-        usemin : {
+        usemin: {
             html: '../blog-gh-pages/**/*.html',
             css: '../blog-gh-pages/css/*.css',
             options: {
@@ -89,41 +83,66 @@ module.exports = function (grunt) {
                 assetsDirs: ['./']
             }
         },
-        filrev:{}
-    });
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseWhitespace: true,
+                    conservativeCollapse: true,
+                    collapseBooleanAttributes: false,
+                    removeCommentsFromCDATA: true
+                }
+                ,
+                files: [{
+                    expand: true,
+                    cwd: '../blog-gh-pages/',
+                    src: ['*.html', '{,**/}*.html'],
+                    dest: '../blog-gh-pages/'
+                }]
+            }
+        },
+        'http-server': {
+            'dist': {
+                // the server root directory
+                root: '../blog-gh-pages'
+            }
+        },
+        shell: {
+            jekyll: {
+                command: 'jekyll build'
+            }
+        }
+    })
+    ;
 
     grunt.loadNpmTasks('grunt-bower-install-simple');
     grunt.loadNpmTasks('grunt-include-source');
     grunt.loadNpmTasks('grunt-wiredep');
 
     grunt.loadNpmTasks('grunt-usemin');
-    grunt.loadNpmTasks('grunt-cache-bust');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-filerev');
-
     grunt.loadNpmTasks('grunt-http-server');
+    grunt.loadNpmTasks('grunt-shell');
 
-    // Default task(s).
     grunt.registerTask('build:dev', ['bower-install-simple', 'includeSource:dev', 'wiredep:dev']);
 
     grunt.registerTask('build:dist', [
-        //'build:dev',
+        'build:dev',
+        'shell:jekyll',
         'clean:dist',
         'copy:dist',
         'useminPrepare',
         'concat:generated',
         'cssmin:generated',
         'uglify:generated',
-        'filerev',
         'usemin',
-        'htmlmin:gh-pages',
-        'cacheBust',
+        //'htmlmin:dist',
         'clean:tmp',
         'http-server:dist'
     ]);
-};
+}
+;

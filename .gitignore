@@ -1,4 +1,5 @@
 _site
 .sass-cache
+.idea
 bower_components
 node_modules
