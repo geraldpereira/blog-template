@@ -1,12 +1,6 @@
 {
-  "name": "Jellly.io",
+  "name": "Blog",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Load testing application",
-  "scripts": {},
-  "config": {},
-  "keywords": [
-    "Load test"
-  ],
   "author": "Gérald Pereira",
   "dependencies": {},
   "devDependencies": {
