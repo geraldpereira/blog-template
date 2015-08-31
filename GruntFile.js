@@ -152,7 +152,7 @@ module.exports = function (grunt) {
         'cssmin:generated',
         'uglify:generated',
         'usemin',
-        //'htmlmin:dist',
+        'htmlmin:dist',
         'clean:tmp',
         'http-server:dist'
     ]);
