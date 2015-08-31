@@ -1,12 +1,12 @@
-{% assign currentURL = page.url | downcase | split: '/' %}
+{% assign pageURL = page.url | downcase | split: '/' %}
 <div class="blog-masthead">
   <div class="container">
     <nav class="nav blog-nav">
-      <a class="nav-link {% if currentURL contains 'index.html' %}active{% endif %}" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <a class="nav-link {% if pageURL contains 'index.html' %}active{% endif %}" href="{{ site.baseurl }}/">{{ site.title }}</a>
       {% for page in site.pages %}
       {% if page.title %}
-      {% assign pageURL = page.url | downcase | split: '/' %}
-      <a class="nav-link {% if currentURL == pageURL %}active{% endif %}" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      {% assign menuURL = page.url | downcase | split: '/' %}
+      <a class="nav-link {% if pageURL == menuURL %}active{% endif %}" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
       {% endif %}
       {% endfor %}
     </nav>
