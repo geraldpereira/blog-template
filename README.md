@@ -27,12 +27,15 @@
 ## Jekyll and grunt
 All of this is from the blog folder.
 
-### Local test
-`jekyll serve` and then go to http://127.0.0.1:4000/
+### Build
 
-### Build 
+`npm install`
+
 When you add new dependencies :
 `grunt build:dev`
 
 To build for publishing :
 `grunt build:dist --force` and then check the result at http://127.0.0.1:8282/
+
+### Local test
+`jekyll serve` and then go to http://127.0.0.1:4000/
