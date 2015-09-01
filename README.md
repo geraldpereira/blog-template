@@ -3,8 +3,14 @@
 ## Installation
 
 * `sudo apt-get install ruby-full rubygems-integration` 
-* `gem install jekyll`
+* `sudo gem install jekyll`
+* `sudo apt-get install nodejs npm`
+* `sudo npm install -g coffee-script`
+* `sudo npm install -g grunt-cli`
 * `sudo npm install -g bower`
+ 
+You may need to run the command `ln -s /usr/bin/nodejs /usr/bin/node` if you have the error `/usr/bin/env: node: No such file or directory` when running grunt or bower.
+https://github.com/nodejs/node-v0.x-archive/issues/3911
 
 ## Git
 
