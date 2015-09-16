@@ -1,5 +1,7 @@
 # blog-template
 
+[A blog's creation guide, from Jekyll base theme to Boostrap4. Using Grunt/Bower and hosted on GitHub pages.](http://blog.geraldpereira.com/jekyll/bower/grunt/2015/08/26/bootstrap4-blog-github-pages.html)
+
 ## Installation
 
 * `sudo apt-get install ruby-full rubygems-integration` 
